@@ -1,27 +1,27 @@
-Scenario Description,Test Case ID,Test Steps,Expected Result
+Scenario Description,Test Case ID,Test Steps,Expected Result,Priority,Automation Status
 Submitting valid data,TC001,"1. Launch the application in a web browser
 2. Enter valid data in the form fields
-3. Click the submit button",The application should redirect to a new page that displays the submitted data correctly
+3. Click the submit button",The application should redirect to a new page that displays the submitted data correctly,P0,No
 Submitting empty fields,TC002,"1. Launch the application in a web browser
-2. Submit the form without entering any data",The application should display an error message indicating that the fields are required
+2. Submit the form without entering any data",The application should display an error message indicating that the fields are required,P0,No
 Submitting fields with special characters,TC003,"1. Launch the application in a web browser
 2. Enter data with special characters in the form fields
-3. Click the submit button",The application should redirect to a new page that displays the submitted data correctly; including the special characters
+3. Click the submit button",The application should redirect to a new page that displays the submitted data correctly; including the special characters,P0,No
 Submitting long input in fields,TC004,"1. Launch the application in a web browser
 2. Enter a long string in the form fields
-3. Click the submit button",The application should accept and display the long input correctly
+3. Click the submit button",The application should accept and display the long input correctly,P0,No
 Navigating back from the submitted page,TC005,"1. Launch the application in a web browser
 2. Enter valid data in the form fields
 3. Click the submit button
-4. Click the ""Back"" button in the browser",The browser should navigate back to the form page with the previously entered data pre-filled
+4. Click the ""Back"" button in the browser",The browser should navigate back to the form page with the previously entered data pre-filled,P0,No
 Submitting multiple forms simultaneously,TC006,"1. Launch the application in multiple browser tabs
 2. Enter different data in each form
-3. Submit the forms simultaneously in each tab",Each form submission should redirect to a separate page displaying the submitted data correctly
+3. Submit the forms simultaneously in each tab",Each form submission should redirect to a separate page displaying the submitted data correctly,P0,No
 Testing application performance with a high load,TC007,"1. Launch the application in a web browser
-2. Write a script or use a load testing tool to simulate a high number of concurrent form submissions",The application should handle the load without crashes or significant performance degradation
-Testing cross-browser compatibility,TC008,"1. Launch the application in multiple web browsers (Chrome, Firefox, Safari, etc.)",The application should display and function correctly in all supported browsers
-Testing mobile responsiveness,TC009,"1. Launch the application in a mobile device or emulator",The application should adapt to the mobile screen size and provide a user-friendly experience
+2. Write a script or use a load testing tool to simulate a high number of concurrent form submissions",The application should handle the load without crashes or significant performance degradation,P0,No
+Testing cross-browser compatibility,TC008,"1. Launch the application in multiple web browsers (Chrome, Firefox, Safari, etc.)",The application should display and function correctly in all supported browsers,P0,No
+Testing mobile responsiveness,TC009,"1. Launch the application in a mobile device or emulator",The application should adapt to the mobile screen size and provide a user-friendly experience,P0,No
 Testing input validation for specific fields,TC010,"1. Launch the application in a web browser
 2. Enter invalid data in specific fields (e.g., email, phone number)
-3. Click the submit button",The application should validate the specific fields and display appropriate error messages if the input is invalid
+3. Click the submit button",The application should validate the specific fields and display appropriate error messages if the input is invalid,P0,No
 
