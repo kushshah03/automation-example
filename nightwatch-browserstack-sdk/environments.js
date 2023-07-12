@@ -1,7 +1,7 @@
 module.exports = {
   test_settings: {
     default: {},
-    env1: {
+    chrome: {
       desiredCapabilities: {
         "browserName": "Chrome",
         "bstack:options" : {
@@ -12,7 +12,7 @@ module.exports = {
         }
       }
     },
-    env2: {
+    firefox: {
       desiredCapabilities: {
         "browserName": "Firefox",
         "bstack:options" : {
@@ -23,7 +23,7 @@ module.exports = {
         }
       }
     },
-    env3: {
+    safari: {
       desiredCapabilities: {
         "browserName": "Safari",
         "bstack:options" : {
