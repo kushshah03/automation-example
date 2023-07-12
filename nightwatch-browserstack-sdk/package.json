@@ -8,10 +8,11 @@
     "single": "nightwatch --test ./tests/single/single_test.js --env browserstack",
     "local": "nightwatch --test ./tests/local/local_test.js  --env browserstack ",
     "parallel": "nightwatch --test ./tests/single/single_test.js  --env browserstack.chrome,browserstack.edge,browserstack.firefox",
-    "parallel_local": "nightwatch --test ./tests/local/local_test.js --env browserstack.firefox,browserstack.chrome",
+    "parallel_local": "nightwatch --test ./tests/local/local_test.js --env chrome,firefox,safari",
     "suite": "nightwatch ./tests/suite --parallel --env browserstack.chrome",
     "sample-test": "nightwatch --test ./tests/single/single_test.js  --env env1,env2,env3",
-    "sample-local-test": "nightwatch --test ./tests/local/local_test.js --env env1,env2,env3"
+    "sample-local-test": "nightwatch --test ./tests/local/local_test.js --env env1,env2,env3",
+    "visual-test": "percy exec -- nightwatch --test ./tests/local/local_test.js  --env browserstack"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,9 @@
     "@nightwatch/browserstack": "^0.1.3",
     "nightwatch": "^2.6.20"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@percy/cli": "^1.26.2",
+    "@percy/nightwatch": "^2.2.0"
+  }
 }

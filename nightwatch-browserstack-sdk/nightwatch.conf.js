@@ -1,3 +1,4 @@
+const percy = require('@percy/nightwatch');
 const additonalEnvironments = require("./environments");
 
 if(!additonalEnvironments.test_settings)
@@ -7,8 +8,7 @@ const bstackOptions = {
   'bstack:options' : {
     "os" : "OS X",
     "osVersion" : "Big Sur",
-    "buildName" : "browserstack-build-1",
-    "sessionName" : "BStack nightwatch snippet",
+    "buildName" : "Automation Webinar Demo",
     "source": "nightwatch:sample-sdk:v1.0",
     "seleniumVersion" : "4.0.0",
     userName: process.env.BROWSERSTACK_USERNAME,
@@ -39,6 +39,7 @@ const browserStack = {
 
 const nightwatchConfigs = {
   src_folders: [],
+  custom_commands_path: [percy.path],
   live_output: true,
   plugins: ['@nightwatch/browserstack'],
   '@nightwatch/browserstack': {
