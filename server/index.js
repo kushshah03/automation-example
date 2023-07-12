@@ -25,7 +25,9 @@ app.post('/submit', (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
 
+
+module.exports = { app, server };
