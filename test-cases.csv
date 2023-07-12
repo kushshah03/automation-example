@@ -6,7 +6,7 @@ Submitting empty fields,TC002,"1. Launch the application in a web browser
 2. Submit the form without entering any data",The application should display an error message indicating that the fields are required
 Submitting fields with special characters,TC003,"1. Launch the application in a web browser
 2. Enter data with special characters in the form fields
-3. Click the submit button",The application should redirect to a new page that displays the submitted data correctly, including the special characters
+3. Click the submit button",The application should redirect to a new page that displays the submitted data correctly; including the special characters
 Submitting long input in fields,TC004,"1. Launch the application in a web browser
 2. Enter a long string in the form fields
 3. Click the submit button",The application should accept and display the long input correctly
