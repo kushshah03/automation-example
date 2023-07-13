@@ -7,6 +7,9 @@ const expect = chai.expect;
 
 describe('Node.js UI Application', () => {
 
+  after((done) => {
+    server.close(done);
+  });
 
   describe('GET /', () => {
     it('should render the form page', (done) => {
@@ -32,6 +35,26 @@ describe('Node.js UI Application', () => {
         });
     });
 
+    it('should accept long data type', (done) => {
+      chai.request(app)
+        .post('/submit')
+        .send({ firstName: 'sldnflsdknflsdknflsdknflsdnflskdnflsdkfnldsfnlsd', lastName: 'sldnflsdknflsdknflsdknflsdnflskdnflsdkfnldsfnlsdslkdnflksdnfslkdnfsldknflsdnflsdknflskdnf' })
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
+    });
+
+    it('should support special character', (done) => {
+      chai.request(app)
+        .post('/submit')
+        .send({ firstName: 'skdjnfsf@#$@#$', lastName: 'skdjnfsf@#$@#$' })
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
+    });
+
     it('should display an error message for empty fields', (done) => {
       chai.request(app)
         .post('/submit')
@@ -46,4 +69,3 @@ describe('Node.js UI Application', () => {
   });
 
 });
-

@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserstack-node-sdk": "^1.23.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
