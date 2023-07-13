@@ -11,8 +11,8 @@ const bstackOptions = {
     "buildName" : "Automation Webinar Demo",
     "source": "nightwatch:sample-sdk:v1.0",
     "seleniumVersion" : "4.0.0",
-    user: 'snehijain_YwxCzD' ,
-    key: 'wZrqhVzNqcEYrEpGK9Yy' ,
+    user: user ,
+    key: key,
   },
 }
 
