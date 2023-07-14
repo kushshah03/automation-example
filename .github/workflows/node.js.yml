@@ -23,3 +23,5 @@ jobs:
     - name: Test Setup
       working-directory: ./nightwatch-browserstack-sdk
       run: npm install
+    - name: Print Name
+      run: echo "$BROWSERSTACK_USERNAME"
