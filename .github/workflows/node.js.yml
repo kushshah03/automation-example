@@ -4,10 +4,9 @@
 name: UI Automation Suite
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    paths: [ "./server/**" ]
 
 jobs:
   build:
@@ -27,8 +26,14 @@ jobs:
         node-version: '18'
     - name: Test Setup
       run: npm install
-    - name: Run Tests
+    - name: Run Local Suite
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-      run: npm run single
+      run: |
+        cd ../server
+        npm install
+        node index.js &
+        sleep 3
+        cd ./nightwatch-browserstack-sdk
+        npm run local_suite
