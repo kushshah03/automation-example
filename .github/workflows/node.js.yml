@@ -26,14 +26,15 @@ jobs:
         node-version: '18'
     - name: Test Setup
       run: npm install
+    - name: Start Local Server
+      working-directory: ./server
+      run: |
+        npm install
+        node index.js &
+        sleep 3
     - name: Run Local Suite
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
-        cd ../server
-        npm install
-        node index.js &
-        sleep 3
-        cd ./nightwatch-browserstack-sdk
         npm run local_suite
