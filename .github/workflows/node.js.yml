@@ -9,15 +9,13 @@ on:
     # paths: [ "./server/**" ]
 
 jobs:
-  build:
-
+  UI-Tests:
     runs-on: ubuntu-latest
     env:
       working-directory: ./nightwatch-browserstack-sdk
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup Node
@@ -38,3 +36,31 @@ jobs:
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
         npm run local_suite
+  Visual-Tests:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./nightwatch-browserstack-sdk
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Test Setup
+      run: npm install
+    - name: Start Local Server
+      working-directory: ./server
+      run: |
+        npm install
+        node index.js &
+        sleep 3
+    - name: Run Visual Suite
+      env:
+        BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+        BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      run: |
+        npm run visual-test
