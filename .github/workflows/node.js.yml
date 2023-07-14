@@ -24,4 +24,6 @@ jobs:
       working-directory: ./nightwatch-browserstack-sdk
       run: npm install
     - name: Print Name
+      env:
+        BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
       run: echo "$BROWSERSTACK_USERNAME"
