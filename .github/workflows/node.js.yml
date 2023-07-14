@@ -6,7 +6,7 @@ name: UI Automation Suite
 on:
   pull_request:
     branches: [ "main" ]
-    paths: [ "./server/**" ]
+    # paths: [ "./server/**" ]
 
 jobs:
   build:
