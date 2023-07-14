@@ -13,7 +13,7 @@
     "local_suite": "nightwatch ./tests/local --parallel --env chrome,firefox,safari",
     "sample-test": "nightwatch --test ./tests/single/single_test.js  --env env1,env2,env3",
     "sample-local-test": "nightwatch --test ./tests/local/SubmitForm.js --env env1,env2,env3",
-    "visual-test": "percy exec -- nightwatch --test ./tests/local --parallel  --env browserstack"
+    "visual-test": "percy exec -- nightwatch --test ./tests/local/*.js --parallel  --env browserstack"
   },
   "repository": {
     "type": "git",
