@@ -23,7 +23,8 @@ jobs:
     - name: Test Setup
       working-directory: ./nightwatch-browserstack-sdk
       run: npm install
-    - name: Print Name
+    - name: Run Tests
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-      run: echo "$BROWSERSTACK_USERNAME"
+        BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      run: npm run single
