@@ -13,6 +13,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./nightwatch-browserstack-sdk
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
 
     steps:
     - uses: actions/checkout@v3
@@ -21,7 +26,6 @@ jobs:
       with:
         node-version: '18'
     - name: Test Setup
-      working-directory: ./nightwatch-browserstack-sdk
       run: npm install
     - name: Run Tests
       env:
