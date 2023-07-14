@@ -11,8 +11,8 @@ const bstackOptions = {
     "buildName" : "Automation Webinar Demo",
     "source": "nightwatch:sample-sdk:v1.0",
     "seleniumVersion" : "4.0.0",
-    userName: process.env.BROWSERSTACK_USERNAME,
-    accessKey: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: user ,
+    key: key,
   },
 }
 
@@ -43,13 +43,14 @@ const nightwatchConfigs = {
   live_output: true,
   plugins: ['@nightwatch/browserstack'],
   '@nightwatch/browserstack': {
-    browserstackLocal: true,
+    browserstackLocal: false, //set true to manage browserstack local tunnel. Defaults to false.
     test_observability: {
       enabled: true,
-      user: process.env.BROWSERSTACK_USERNAME,
-      key: process.env.BROWSERSTACK_ACCESS_KEY,
-      projectName: "Automation Webinar Demo Project",
-      buildName: "Automation Webinar Demo",
+      projectName: 'NW-Webinar-Proj',
+      buildName: 'NW-Webinar-Build',
+      user: user ,
+      key: key ,
+      buildTag: ['qa', 'sanity']
     }
   },
 
