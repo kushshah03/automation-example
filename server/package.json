@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "BROWSERSTACK_AUTOMATION=false npx browserstack-node-sdk mocha"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
