@@ -39,7 +39,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: HTML Reports
-        path: ./tests_output/nightwatch-html-report/index.html
+        path: /home/runner/work/automation-example/automation-example/nightwatch-browserstack-sdk/tests_output/nightwatch-html-report/index.html
   Visual-Tests:
     runs-on: ubuntu-latest
     env:
