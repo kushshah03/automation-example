@@ -6,7 +6,7 @@ name: Tests
 on:
   pull_request:
     branches: [ "main" ]
-    # paths: [ "./server/**" ]
+    paths: [ "./server/**" ]
 
 jobs:
   UI-Tests:
