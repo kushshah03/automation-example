@@ -1,4 +1,7 @@
 const percy = require('@percy/nightwatch');
+const chromedriver = require('chromedriver');
+const geckodriver = require('geckodriver');
+
 const additonalEnvironments = require("./environments");
 
 if(!additonalEnvironments.test_settings)
@@ -55,8 +58,27 @@ const nightwatchConfigs = {
   },
 
   test_settings: {
-    default: {
-      launch_url: 'https://nightwatchjs.org'
+    'local.chrome': {
+      webdriver: {
+        start_process: true,
+        server_path: chromedriver.path
+      },
+      desiredCapabilities: {
+        browserName: 'chrome'
+      }
+    },
+
+    'local.firefox': {
+      desiredCapabilities: {
+        browserName: 'firefox',
+        pageLoadStrategy: 'eager',
+      },
+      webdriver: {
+        start_process: true,
+        port: 4444,
+        server_path: geckodriver.path,
+        log_path: 'logs',
+      },
     },
 
     browserstack:  {
