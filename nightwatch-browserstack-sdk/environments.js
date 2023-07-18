@@ -1,7 +1,6 @@
 module.exports = {
   test_settings: {
-    default: {},
-    chrome: {
+    win_chrome: {
       desiredCapabilities: {
         "browserName": "Chrome",
         "bstack:options" : {
@@ -12,7 +11,7 @@ module.exports = {
         }
       }
     },
-    firefox: {
+    win_firefox: {
       desiredCapabilities: {
         "browserName": "Firefox",
         "bstack:options" : {
@@ -23,7 +22,7 @@ module.exports = {
         }
       }
     },
-    safari: {
+    mac_safari: {
       desiredCapabilities: {
         "browserName": "Safari",
         "bstack:options" : {
