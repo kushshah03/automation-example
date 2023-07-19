@@ -7,7 +7,7 @@
     "test": "npm run single && npm run local && npm run parallel",
     "single": "nightwatch --test ./tests/single/single_test.js --env browserstack",
     "local": "nightwatch --test ./tests/local/SubmitForm.js  --env browserstack ",
-    "suite_browserstack": "nightwatch --test ./tests/single/single_test.js --parallel --env win_chrome,win_firefox,mac_safari",
+    "suite-browserstack": "nightwatch ./tests/single --parallel --env browserstack.chrome,browserstack.firefox,browserstack.safari",
     "suite": "nightwatch ./tests/single --parallel --env local.chrome,local.firefox",
     "local_suite": "nightwatch ./tests/local --parallel --env win_chrome,win_firefox,mac_safari",
     "visual-test": "percy exec -- nightwatch ./tests/local/** --parallel --env browserstack"
